@@ -5,15 +5,20 @@
   var _public = {};
 
   let fraseAppend = [
-    "Carta de um recém-nascido à sua mãe:",
-    "Mãe, que eu vou mudar sua vida inteira você já sabe, o que você ainda não descobriu é quão maravilhosa ela será com a minha chegada. Eu vou te mostrar o que significa aquele amor incondicional de mãe que você sempre quis saber.",
-    "Você vai aprender que é possível sentir o que o outro sente e amar alguém mais do que a você mesma. Eu vou te apresentar um mundo totalmente novo e diferente de tudo que você já conheceu.",
-    "Vou fazer você descobrir qual é o seu dom. Vou te ensinar muito mais do que aprender. Mesmo tão pequeno, vou ser o centro das suas atenções e nada mais será tão importante para você.",
-    "Vou fazer você enxergar grávidas e mães na rua o tempo inteiro.",
-    "Mas para isso, eu vou te dar muito trabalho. Vou tirar suas noites de sono. Vou sujar minhas roupas com uma rapidez inacreditável. Vou querer sua atenção só para mim.",
-    "Vou te ensinar que paciência é uma virtude e que é preciso treiná-la todos os dias.",
-    "Vou precisar de cuidados em tempo integral.",
-    "Vou querer fazer coisas que não são certas e você que terá que me avisar disso. Sei que não será fácil para você mãe, mas é nesse momento que mais vou precisar da sua ajuda, pois serão suas atitudes perante as minhas que me ensinarão como a vida é.",
+    "Nossa empresa recebeu esta carta:",
+    "Já fui avisado que fui escolhido e estou arrumando minhas malas!",
+    "Que eu vou virar a vida de vocês ao avesso, vocês já sabem, o que vocês ainda não descobriram é quão maravilhosa ela será com a minha chegada.",
+    "Vou mostrar o que significa aquele amor incondicional que você sempre quis saber.",
+    "Vou fazer vocês enxergarem grávidas e mães na rua o tempo inteiro.",
+    "Vocês vão aprender que é possível sentir o que o outro sente e amar alguém mais do que a você mesmo.",
+    "Vou te apresentar um mundo totalmente novo e diferente de tudo que você já conheceu e viveu.",
+    "Vou fazer você descobrir qual é o seu dom. Vou te ensinar muito mais do que aprender.",
+    "Mesmo tão pequeno, vou ser o centro das suas atenções e nada mais será tão importante.",
+    "Mas para isso, vou dar muito trabalho. ",
+    "Vou tirar noites de sono. Vou sujar minhas roupas com uma rapidez inacreditável. Vou querer sua atenção só para mim.",
+    "Vou ensinar que paciência é uma virtude e que é preciso treiná-la todos os dias.Vou precisar de cuidados em tempo integral.",
+    "Vou querer fazer coisas que não são certas e vocês que terão que me avisar disso.", 
+    "Sei que não será fácil, mas é nesse momento que mais vou precisar de ajuda e atenção, pois serão suas atitudes perante as minhas que me ensinarão como a vida é.",
     ];
 
     let fraseEscolha = `
@@ -60,14 +65,14 @@
                 $("#div_frasebebe").append(div);
                 
                 i++;
-                if(i == 9){
+                if(i == 14){
                   var div2 = document.createElement('div');
-                  div2.innerHTML = '<a id="btnRevelar" class="quiz-button btn-quiz">REVELAR!</a>';
+                  div2.innerHTML = '<a id="btnRevelar" class="quiz-button btn-quiz">REVELAR</a>';
                   $("#div_frasebebe").append(div2);
                   _private.ClickBtnRevelacao();
                 }
               } else clearInterval(interval);
-            }, 1000);
+            }, 5000);
       });
     };
 
