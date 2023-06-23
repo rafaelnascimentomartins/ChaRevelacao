@@ -69,7 +69,7 @@
                   _private.ClickBtnRevelacao();
                 }
               } else clearInterval(interval);
-            }, 5);
+            }, 3000);
       });
     };
 
@@ -174,9 +174,9 @@
           {
             'q': 'Depois que o bebê nascer, vai...',
             'options': [
-              'Ser bonzinho e dormir bastante',
-              'Ser preguiçoso, mas quando chorar será bem alto',
-              'Vai ser agitado e dormir pouco'
+              'Ser bonzinho e dormir <br/> bastante',
+              'Ser preguiçoso, mas quando <br/> chorar será bem alto',
+              'Vai ser agitado e dormir <br/> pouco'
             ],
             'correctIndex': 3,
             'correctResponse': fraseEscolha,
