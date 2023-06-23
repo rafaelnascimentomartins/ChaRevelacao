@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" type="text/css" href="../dist/jquery.quiz-min.css" />
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" crossorigin="anonymous"></script>
     <script src="../dist/jquery.quiz-min.js"></script>
     <script src="index.js"></script>
   </head>
@@ -67,34 +67,59 @@
                         <p>
                           <div>
                             <a href="#" class="quiz-start-btn quiz-button">VAMOS LÁ!</a>
-                            <img src="./images/bebe-com-leite.gif" height="100" />
+                            <img alt="" src="./images/bebe-com-leite.gif" height="100" />
                         </div>
                         </p>
                       </div>
                       <div id="quiz-results-screen">
-                        <h3>O bebê foi selecionado! Parabéns para o casal, mas antes o bebê gostaria de dizer algumas palavras:</h3>
-                        <div id="div_frasebebe"></div>
+                        <div id="divValidacao1" style="display: none;">
+                          <h3>Parabéns para o casal! o bebê foi escolhido de acordo com as respostas. Gostariam de saber?!</h3>
+                          <div style="display: flex;justify-content: space-evenly;align-items: center;">
+                            <a id="btnValidacao1" href="#" class="quiz-button btn-quiz">SIM</a>
+                            <a class="quiz-button noClick">NÃO</a>
+                          </div>
+                        </div>
+                        <div id="divValidacao2" style="display: none;">
+                          <h3>Tem mesmo certeza que estão prontos?!</h3>
+                          <div style="display: flex;justify-content: space-evenly;align-items: center;">
+                            <a id="btnValidacao2" href="#" class="quiz-button btn-quiz">SIM</a>
+                            <a class="quiz-button noClick">NÃO</a>
+                          </div>
+                        </div>
+                        <div id="divValidacao3" style="display: none;">
+                          <h3>Absoluta?! Se escolher "SIM", não poderá voltar! </h3>
+                          <div style="display: flex;justify-content: space-evenly;align-items: center;">
+                            <a id="btnValidacao3" href="#" class="quiz-button btn-quiz">SIM</a>
+                            <a class="quiz-button noClick">NÃO</a>
+                          </div>
+                        </div>
+                       
+                        <div id="div_frasebebe" style="display: none;">
+                          <h3>Antes de continuarmos, o bebê gostaria de dizer algumas palavrinhas:</h3>
+                        </div>
+                        <div id="div_revelacao" style="display: none;">
+                          <h3>Clique na imagem para revelar!</h3>
+                          <br />
+                          <br />
+                          <br />
+                          <input type="checkbox" id="switch" />
+
+                          <label class="flip-container" for="switch" >
+                            <div class="flipper">
+                              <div class="front">
+                                <img width="300" height="200" src="./images/descobrir.png" />
+                              </div>
+                              <div class="back">
+                                
+                              </div>
+                            </div>
+                          </label>
+
+                        </div>
                       </div>
                     </div>
 
                   </div>
-                    <!-- <div id="quiz" class="quiz text--center">
-                        <div class="container_quiz quiz-start-state">
-                           <div class="quiz-header quiz-start-screen">
-                                <h3>Papai e Mamãe, vamos começar?</h3>
-                                <p>Depois do processo de Quiz o seu bebê será revelado!</p>
-                            </div>
-                            <div class="quiz-start-screen">
-                              <p>
-                                <div>
-                                  <a href="#" class="quiz-start-btn quiz-button">VAMOS LÁ!</a>
-                                  <img src="./images/bebe-com-leite.gif" height="100" />
-                              </div>
-                              </p>
-                            </div> 
-                           
-                </div>
-            </div> -->
               </div>
             </div>
             <div class="pb30 pt30 p-relative bg-purple">
@@ -120,158 +145,9 @@
                     </div>
                 </div>
             </div>
-
-          
-            <!-- <section id="section_quiz" class="mb50">
-                <div class="container">
-                    <div class="quiz text-center">
-                        <div id="quiz">
-                            <div class="quiz-header quiz-start-screen">
-                              <h1>Papai e Mamãe, vamos começar?</h1>
-                              <p>Depois do processo de Quiz o seu bebê será revelado!</p>
-                            </div>
-                            <div class="quiz-start-screen">
-                              <p>
-                                <div>
-                                    <a href="#" class="quiz-start-btn quiz-button">VAMOS LÁ!</a>
-                                    <img src="./images/bebe-com-leite.gif" height="100" />
-                                </div>
-                              </p>
-                            </div>
-                            <div class="quiz-results-screen" style="display: block;"><p class="quiz-results">Yowu got 3 out of 5 correct!</p></div>
-                          </div>
-                    </div>
-                </div>
-            </section> -->
         </div>
-       
-
-      <!-- <section id="section_quiz" class="mb50">
-        <div class="container_quiz">
-            <div class="quiz text-center">
-                <div id="quiz">
-                    <div class="quiz-header quiz-start-screen">
-                      <h1>Papai e Mamãe, vamos começar?</h1>
-                      <p>Depois do processo de Quiz, será revelado o seu bebê!</p>
-                    </div>
-                    <div class="quiz-start-screen">
-                      <p><a href="#" class="quiz-start-btn quiz-button">VAMOS LÁ!</a></p>
-                    </div>
-                    <div class="quiz-results-screen" style="display: block;"><p class="quiz-results">Yowu got 3 out of 5 correct!</p></div>
-                  </div>
-            </div>
-        </div>
-       
-      </section> -->
-     
-      <!-- <div class="row mb50">
-        <div class="col-md-12">
-            <div class="container_sobre">
-                <h3>Sobre</h3>
-                <p class="paragrafoSobre">
-                    Quiz único disponibilizado para o casal descobrir o gênero do bebê, esse sistema terá uma vida única
-                    ate o momento da finalização da data do Chá de bebê.
-                    <br />
-                    Desenvolvido pela equipe <b>7Even Company LTDA</b>. 
-                </p>
-            </div>
-        </div>
-      </div> -->
-      <!-- <div class="row">
-        <div class="col-md-12">
-            <div class="container_sobre">
-                <h3>Tecnologia</h3>
-                <p class="paragrafoSobre">
-                    Simple Page Application, usando JQuery, CSS3 e HTML5
-                </p>
-            </div>
-        </div>
-      </div> -->
-     
-
     </main>
-    <!-- <nav id="nav_menu" class="navbar navbar-expand-lg navbar-light shadow-none bg-black  mb20">
-            <div class="container" style="z-index: 10000">
-                <a class="navbar-brand me-2" href="#">
-                    <img
-                      style="margin-top: -10px"
-                      id="logo_enel"
-                      src="https://media.licdn.com/dms/image/D4D3DAQEautSay-Xnfw/image-scale_191_1128/0/1658858694100?e=1688061600&v=beta&t=f91EbKyRuMu58YaJHG0-4__Z54nxpQ82IL-umzjwf-s"
-                      height="30"
-                      alt="7SevenCompany"
-                      loading="lazy"
-                    />
-                  </a>
-            </div>
-        </nav> -->
-
-    <!-- 
-        
-        
-       
-        <section id="preinicio_quiz">
-            <div class="container bg-white br-8 p-4 mt80">
-                <div class="row ">
-                    <div class="col-10">
-                        <span class="fs-16 color-grey">Passo 1 de 7</span>
-                        <br />
-                        <span class="fs-22 f-bold">1</span>
-                      </div>
-                      <div class="col-2">
-                        <div class="text-end" style="padding-top: 16px">
-                          <button
-                            id="setaEsq"
-                            style="width: 80%"
-                            [class]="'icon-button fs-28 ' + (passo === 1 || passo === 7 ? 'arrow-disabled' : 'arrow-enabled')"
-                            (click)="retornarPasso()"
-                            [disabled]="passo === 1 || passo === 7 "
-                          >
-                            <i class="fas fa-angle-left"></i>
-                          </button>
-                          <button
-                            id="setaDir"
-                            style="width: 0%;"
-                            [class]="'icon-button fs-28 ' + (passo >= 6 ? 'arrow-disabled' : 'arrow-enabled')"
-                            (click)="avancarPasso()"
-                            [disabled]="passo >= 6"
-                          >
-                            <i class="fas fa-angle-right"></i>
-                          </button>
-                        </div>
-                      </div>
-                </div>
-                <div class="row" style="margin-bottom: 40px">
-                    <div class="col-12">
-                      <div class="progress br-8">
-                        <div
-                          id="barraProgresso"
-                          [class]="'progress-bar ' + (passo === totalPassos ? 'bg-sucesso' : 'bg-pink')"
-                          role="progressbar"
-                          [style]="'width: ' + ((100 / totalPassos) * passo).toString() + '%'"
-                          [attr.aria-valuenow]="passo"
-                          aria-valuemin="0"
-                          [attr.aria-valuemax]="totalPassos"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            <img 
-            src="./images/bebe-com-leite.gif" 
-            height="200" />
-        </section>
-        <section id="section_quiz">
-            <div class="container bg-white br-8 p-4 mt80">
-                <div class="row ">
-                    <div class="col-10">
-                        <span class="fs-16 color-grey">Passo 1 de 7</span>
-                        <br />
-                        <span class="fs-22 f-bold">1</span>
-                      </div>
-                </div>
-            </div>
-        </section> -->
-
+    
         <footer>
             <div class="container_footer">
                 <div class="row text-start">
