@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <title>CHÁ REVELAÇÃO - FULANA</title>
+  <title>CHÁ REVELAÇÃO</title>
   <link
     rel="icon"
     type="image/x-icon"
@@ -21,10 +21,10 @@
     <!--#endregion-->
 
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" type="text/css" href="../dist/jquery.quiz-min.css" />
+    <link rel="stylesheet" type="text/css" href="./dist/jquery.quiz-min.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="../dist/jquery.quiz-min.js"></script>
+    <script src="./dist/jquery.quiz-min.js"></script>
     <script src="index.js"></script>
   </head>
 
@@ -39,6 +39,7 @@
             height="50"
             alt="7SevenCompany"
             loading="lazy"
+            class="initialPage"
           />
         </a>
       </div>
@@ -51,7 +52,8 @@
                         <h1>Quiz do bebê</h1>
                         <h2>
                             Falta bem pouco! Mas antes precisamos saber <br />
-                            de algumas respostas para identificar qual o bebê irá fazer o "match" com o casal! <br />
+                            de algumas 9 respostas de acordo com os meses de gestação da mamãe <br/>
+                            para identificar qual o bebê irá fazer o "match" com o casal! <br />
                             Felicidades ao casal e vamos a procura do bebê! 
                         </h2>
                     </div>                    
@@ -63,7 +65,8 @@
                     <div class="quiz-container quiz-questions-state">
                       <div class="quiz-start-screen">
                         <h3>Papai e Mamãe, vamos começar?</h3>
-                        <p>Depois do processo de Quiz o seu bebê será revelado!</p>
+                        <p>Existem alguns bebês na fila para que apenas um seja selecionado de acordo com as respostas <br/>
+                          boa sorte para o casal!</p>
                         <p>
                           <div>
                             <a href="#" class="quiz-start-btn quiz-button">VAMOS LÁ!</a>
@@ -73,7 +76,7 @@
                       </div>
                       <div id="quiz-results-screen">
                         <div id="divValidacao1" style="display: none;">
-                          <h3>Parabéns para o casal! o bebê foi escolhido de acordo com as respostas. Gostariam de saber?!</h3>
+                          <h3>Parabéns para o casal! O bebê foi escolhido de acordo com as respostas. Gostariam de saber?!</h3>
                           <div style="display: flex;justify-content: space-evenly;align-items: center;">
                             <a id="btnValidacao1" href="#" class="quiz-button btn-quiz">SIM</a>
                             <a class="quiz-button noClick">NÃO</a>
@@ -87,7 +90,7 @@
                           </div>
                         </div>
                         <div id="divValidacao3" style="display: none;">
-                          <h3>Absoluta?! Se escolher "SIM", não poderá voltar! </h3>
+                          <h3>Absoluta?! Se continuar será revelado ao casal! </h3>
                           <div style="display: flex;justify-content: space-evenly;align-items: center;">
                             <a id="btnValidacao3" href="#" class="quiz-button btn-quiz">SIM</a>
                             <a class="quiz-button noClick">NÃO</a>
@@ -110,7 +113,7 @@
                                 <img width="300" height="200" src="./images/descobrir.png" />
                               </div>
                               <div class="back">
-                                
+                                <img width="300" height="200" src="./images/revelacao.png" />
                               </div>
                             </div>
                           </label>

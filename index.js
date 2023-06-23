@@ -41,7 +41,10 @@
                 
                 i++;
                 if(i == 4){
-                  _private.ShowRevelacao();
+                  var div2 = document.createElement('div');
+                  div2.innerHTML = '<a id="btnRevelar" class="quiz-button btn-quiz">REVELAR!</a>';
+                  $("#div_frasebebe").append(div2);
+                  _private.ClickBtnRevelacao();
                 }
               } else clearInterval(interval);
             }, 1000);
@@ -80,29 +83,6 @@
         resultsScreen:'#quiz-results-screen',
         finishCallback: function () {
           $("#divValidacao1").css('display','block');
-          // setInterval(() => {
-          //   var div = document.createElement('div');
-          //   div.innerHTML = '<h3>É UM MENINO</h3>';
-          //   $("#div_revelacao").apped(div);
-          // }, 2000);
-
-          //FRASE FINAL
-          // var arrText = 
-          // ["Mamãe esse é um texto final para mostrar o tanto que é importante eu na sua vida (bebê falando).",
-          // "Papai mimimi mimimi mimimi mimimimimimimimimi mimimi mimimi mimimimimimimimimi mimimi mimimi mimimi",
-          // "Os dois mimimi mimimi mimimimimimimimimi mimimi mimimi mimimi mimimi mimimi mimimimimimi mimimi mimimi",
-          // "Ultimo texto? se quiser pode colocar bem mais coisas coisascoisascoisas coisas coisas coisas coisas"];
-          // var i = 0;
-          // var interval = setInterval(function() {
-          //   if (i < arrText.length) {
-          //       var div = document.createElement('div');
-          //       div.innerHTML = arrText[i];
-          //       $("#quiz-results-screen #div_frasebebe").append(div);
-                
-          //       i++;
-          //     } else clearInterval(interval);
-          //   }, 5000);
-          
         },
         // nextCallback: function () {
         //   setTimeout(function (e) {
@@ -114,14 +94,14 @@
           {
             'q': 'Primera pergunta?',
             'options': [
-              'Esta é uma resposta a ser colocada.',
+              'Esta é uma resposta <br/ > a ser colocada.',
               'Esta é uma resposta a ser colocada.',
               'Esta é uma resposta a ser colocada.',
               'Esta é uma resposta a ser colocada.'
             ],
             'correctIndex': 1,
-            'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-            'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
+            'correctResponse': 'Perfeito! estamos verificando na lista de bebês e <br/> selecionando todos que combinam com a resposta do casal!',
+            'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês e selecionando todos que combinam com a resposta do casal!'
           }//,
           // {
           //   'q': 'Segunda Pergunta? <img src="https://picsum.photos/100/100">',
@@ -221,11 +201,14 @@
       });
     };
 
-    _private.ShowRevelacao = function () {
-      setInterval(() => {
+    _private.ClickBtnRevelacao = function () {
+      $("#btnRevelar").on('click', function (e) {
+        e.preventDefault();
+        
         $("#div_frasebebe").css('display','none');
         $("#div_revelacao").css('display','block');
-      }, 1000);
+      });
+     
     }
     
 })();
