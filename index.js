@@ -4,6 +4,29 @@
   var _private = {};
   var _public = {};
 
+  let fraseAppend = [
+    "Carta de um recém-nascido à sua mãe:",
+    "Mãe, que eu vou mudar sua vida inteira você já sabe, o que você ainda não descobriu é quão maravilhosa ela será com a minha chegada. Eu vou te mostrar o que significa aquele amor incondicional de mãe que você sempre quis saber.",
+    "Você vai aprender que é possível sentir o que o outro sente e amar alguém mais do que a você mesma. Eu vou te apresentar um mundo totalmente novo e diferente de tudo que você já conheceu.",
+    "Vou fazer você descobrir qual é o seu dom. Vou te ensinar muito mais do que aprender. Mesmo tão pequeno, vou ser o centro das suas atenções e nada mais será tão importante para você.",
+    "Vou fazer você enxergar grávidas e mães na rua o tempo inteiro.",
+    "Mas para isso, eu vou te dar muito trabalho. Vou tirar suas noites de sono. Vou sujar minhas roupas com uma rapidez inacreditável. Vou querer sua atenção só para mim.",
+    "Vou te ensinar que paciência é uma virtude e que é preciso treiná-la todos os dias.",
+    "Vou precisar de cuidados em tempo integral.",
+    "Vou querer fazer coisas que não são certas e você que terá que me avisar disso. Sei que não será fácil para você mãe, mas é nesse momento que mais vou precisar da sua ajuda, pois serão suas atitudes perante as minhas que me ensinarão como a vida é.",
+    ];
+
+    let fraseEscolha = `
+    Obrigado pela sua escolha! <br/>
+    Estamos verificando a compatibilidade de acordo com nossa fila, favor aguardar.
+    `;
+
+    let fraseUltEscolha = `
+    Obrigado pelo seu empenho até aqui!
+    Nosso match já foi definido e será revelado. <br/>
+    Quando estiverem prontos, basta FINALIZAR!
+    `;
+
     $(function () {
       _public.LoadQuiz();
       _public.ClickBtnsValidacoes();
@@ -27,11 +50,8 @@
         $("#div_frasebebe").css('display','block');
 
          //FRASE FINAL
-          var arrText = 
-          ["Mamãe esse é um texto final para mostrar o tanto que é importante eu na sua vida (bebê falando).",
-          "Papai mimimi mimimi mimimi mimimimimimimimimi mimimi mimimi mimimimimimimimimi mimimi mimimi mimimi",
-          "Os dois mimimi mimimi mimimimimimimimimi mimimi mimimi mimimi mimimi mimimi mimimimimimi mimimi mimimi",
-          "Ultimo texto? se quiser pode colocar bem mais coisas coisascoisascoisas coisas coisas coisas coisas"];
+          var arrText = fraseAppend;
+          
           var i = 0;
           var interval = setInterval(function() {
             if (i < arrText.length) {
@@ -40,7 +60,7 @@
                 $("#div_frasebebe").append(div);
                 
                 i++;
-                if(i == 4){
+                if(i == 9){
                   var div2 = document.createElement('div');
                   div2.innerHTML = '<a id="btnRevelar" class="quiz-button btn-quiz">REVELAR!</a>';
                   $("#div_frasebebe").append(div2);
@@ -78,8 +98,8 @@
     _public.LoadQuiz = function () {
       $('.quiz-container').quiz({
         counterFormat: 'Questões %current of %total',
-        nextButtonText:'PRÓXIMA PERGUNTA!',
-        finishButtonText:'FINALIZAR!',
+        nextButtonText:'PRÓXIMA',
+        finishButtonText:'FINALIZAR',
         resultsScreen:'#quiz-results-screen',
         finishCallback: function () {
           $("#divValidacao1").css('display','block');
@@ -100,21 +120,21 @@
               'Esta é uma resposta a ser colocada.'
             ],
             'correctIndex': 1,
-            'correctResponse': 'Perfeito! estamos verificando na lista de bebês e <br/> selecionando todos que combinam com a resposta do casal!',
-            'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês e selecionando todos que combinam com a resposta do casal!'
-          }//,
-          // {
-          //   'q': 'Segunda Pergunta? <img src="https://picsum.photos/100/100">',
-          //   'options': [
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.'
-          //   ],
-          //   'correctIndex': 1,
-          //   'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-          //   'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
-          // },
+            'correctResponse': fraseEscolha,
+            'incorrectResponse':  fraseEscolha
+          },
+          {
+            'q': 'Segunda Pergunta? <img src="https://picsum.photos/100/100">',
+            'options': [
+              'Esta é uma resposta a ser colocada.',
+              'Esta é uma resposta a ser colocada.',
+              'Esta é uma resposta a ser colocada.',
+              'Esta é uma resposta a ser colocada.'
+            ],
+            'correctIndex': 1,
+            'correctResponse': fraseUltEscolha,
+            'incorrectResponse':  fraseUltEscolha
+          },
           // {
           //   'q': 'Terceira pergunta?',
           //   'options': [
@@ -204,7 +224,7 @@
     _private.ClickBtnRevelacao = function () {
       $("#btnRevelar").on('click', function (e) {
         e.preventDefault();
-        
+
         $("#div_frasebebe").css('display','none');
         $("#div_revelacao").css('display','block');
       });
