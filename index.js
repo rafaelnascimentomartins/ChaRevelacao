@@ -5,20 +5,16 @@
   var _public = {};
 
   let fraseAppend = [
-    "Nossa empresa recebeu esta carta:",
+    "NOSSA EMPRESA RECEBEU ESTA CARTA:",
     "Já fui avisado que fui escolhido e estou arrumando minhas malas!",
     "Que eu vou virar a vida de vocês ao avesso, vocês já sabem, o que vocês ainda não descobriram é quão maravilhosa ela será com a minha chegada.",
-    "Vou mostrar o que significa aquele amor incondicional que você sempre quis saber.",
     "Vou fazer vocês enxergarem grávidas e mães na rua o tempo inteiro.",
-    "Vocês vão aprender que é possível sentir o que o outro sente e amar alguém mais do que a você mesmo.",
-    "Vou te apresentar um mundo totalmente novo e diferente de tudo que você já conheceu e viveu.",
-    "Vou fazer você descobrir qual é o seu dom. Vou te ensinar muito mais do que aprender.",
-    "Mesmo tão pequeno, vou ser o centro das suas atenções e nada mais será tão importante.",
-    "Mas para isso, vou dar muito trabalho. ",
-    "Vou tirar noites de sono. Vou sujar minhas roupas com uma rapidez inacreditável. Vou querer sua atenção só para mim.",
-    "Vou ensinar que paciência é uma virtude e que é preciso treiná-la todos os dias.Vou precisar de cuidados em tempo integral.",
-    "Vou querer fazer coisas que não são certas e vocês que terão que me avisar disso.", 
-    "Sei que não será fácil, mas é nesse momento que mais vou precisar de ajuda e atenção, pois serão suas atitudes perante as minhas que me ensinarão como a vida é.",
+    "Vou te ensinar muito mais do que aprender.",
+    "Mas para isso, vou dar muito trabalho.",
+    "Vou tirar noites de sono. Vou sujar minhas roupas com uma rapidez inacreditável.",
+    "Vou ensinar que paciência é uma virtude e que é preciso treiná-la todos os dias.",
+    "Vou querer fazer coisas que não são certas e vocês que terão que me avisar disso.",
+    "Sei que não será fácil, mas é nesse momento que mais vou precisar de ajuda e atenção, pois serão suas atitudes perante as minhas que me ensinarão como a vida é.",
     ];
 
     let fraseEscolha = `
@@ -36,6 +32,7 @@
       _public.LoadQuiz();
       _public.ClickBtnsValidacoes();
       _public.NoClickButton();
+      _public.CheckedImageRevelacao();
     });
   
     _public.ClickBtnsValidacoes = function () {
@@ -65,14 +62,14 @@
                 $("#div_frasebebe").append(div);
                 
                 i++;
-                if(i == 14){
+                if(i == 10){
                   var div2 = document.createElement('div');
                   div2.innerHTML = '<a id="btnRevelar" class="quiz-button btn-quiz">REVELAR</a>';
                   $("#div_frasebebe").append(div2);
                   _private.ClickBtnRevelacao();
                 }
               } else clearInterval(interval);
-            }, 5000);
+            }, 5);
       });
     };
 
@@ -117,111 +114,111 @@
         // },
         questions: [
           {
-            'q': 'Primera pergunta?',
+            'q': 'A mamãe acha que o bebê vai pesar...',
             'options': [
-              'Esta é uma resposta <br/ > a ser colocada.',
-              'Esta é uma resposta a ser colocada.',
-              'Esta é uma resposta a ser colocada.',
-              'Esta é uma resposta a ser colocada.'
+              '2kg a 2,8kg',
+              '2,9kg a 3,5kg',
+              'Mais de 3,5kg'
             ],
             'correctIndex': 1,
             'correctResponse': fraseEscolha,
             'incorrectResponse':  fraseEscolha
           },
           {
-            'q': 'Segunda Pergunta? <img src="https://picsum.photos/100/100">',
+            'q': 'O papai acha que o bebê vai medir...',// <img src="https://picsum.photos/100/100">
             'options': [
-              'Esta é uma resposta a ser colocada.',
-              'Esta é uma resposta a ser colocada.',
-              'Esta é uma resposta a ser colocada.',
-              'Esta é uma resposta a ser colocada.'
+              'Menos de 46cm',
+              'Entre 47cm e 49cm',
+              'Mais de 49cm'
             ],
             'correctIndex': 1,
-            'correctResponse': fraseUltEscolha,
-            'incorrectResponse':  fraseUltEscolha
+            'correctResponse': fraseEscolha,
+            'incorrectResponse':  fraseEscolha
           },
-          // {
-          //   'q': 'Terceira pergunta?',
-          //   'options': [
-          //     '<img src="https://picsum.photos/100/100">',
-          //     '<img src="https://picsum.photos/100/100">'
-          //   ],
-          //   'correctIndex': 0,
-          //   'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-          //   'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
-          // },
-          // {
-          //   'q': 'Quarta pergunta?',
-          //   'options': [
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.'
-          //   ],
-          //   'correctIndex': 1,
-          //   'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-          //   'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
-          // },
-          // {
-          //   'q': 'Quinta pergunta?',
-          //   'options': [
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.'
-          //   ],
-          //   'correctIndex': 3,
-          //   'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-          //   'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
-          // },
-          // {
-          //   'q': 'Sexta pergunta?',
-          //   'options': [
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.'
-          //   ],
-          //   'correctIndex': 3,
-          //   'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-          //   'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
-          // },
-          // {
-          //   'q': 'Sétima pergunta?',
-          //   'options': [
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.'
-          //   ],
-          //   'correctIndex': 3,
-          //   'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-          //   'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
-          // },
-          // {
-          //   'q': 'Oitava pergunta?',
-          //   'options': [
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.'
-          //   ],
-          //   'correctIndex': 3,
-          //   'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-          //   'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
-          // },
-          // {
-          //   'q': 'Nona pergunta?',
-          //   'options': [
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.',
-          //     'Esta é uma resposta a ser colocada.'
-          //   ],
-          //   'correctIndex': 3,
-          //   'correctResponse': 'Perfeito! estamos verificando na lista de bebês...',
-          //   'incorrectResponse':  'Perfeito! estamos verificando na lista de bebês...'
-          // }
+          {
+            'q': 'Os papais acham que o bebê vai chegar...',
+            'options': [
+              'Antes da hora',
+              'Na semana prevista',
+              'Depois da hora',
+              'Vão programar o parto'
+            ],
+            'correctIndex': 0,
+            'correctResponse': fraseEscolha,
+            'incorrectResponse': fraseEscolha
+          },
+          {
+            'q': 'Da mamãe, o bebê vai puxar...',
+            'options': [
+              'Os olhos',
+              'O nariz',
+              'A boca',
+              'A altura'
+            ],
+            'correctIndex': 1,
+            'correctResponse': fraseEscolha,
+            'incorrectResponse':  fraseEscolha
+          },
+          {
+            'q': 'Do papai, o bebê vai puxar...',
+            'options': [
+              'Os olhos',
+              'O nariz',
+              'A boca',
+              'A altura'
+            ],
+            'correctIndex': 1,
+            'correctResponse': fraseEscolha,
+            'incorrectResponse':  fraseEscolha
+          },
+          {
+            'q': 'Depois que o bebê nascer, vai...',
+            'options': [
+              'Ser bonzinho e dormir bastante',
+              'Ser preguiçoso, mas quando chorar será bem alto',
+              'Vai ser agitado e dormir pouco'
+            ],
+            'correctIndex': 3,
+            'correctResponse': fraseEscolha,
+            'incorrectResponse':  fraseEscolha
+          },
+          {
+            'q': 'Quem suspeitou da gravidez primeiro?',
+            'options': [
+              'Mamãe',
+              'Papai',
+              'Ninguém suspeitou'
+            ],
+            'correctIndex': 3,
+            'correctResponse': fraseEscolha,
+            'incorrectResponse':  fraseEscolha
+          },
+          {
+            'q': 'Quem vai ser mais coruja?',
+            'options': [
+              'Mamãe',
+              'Papai',
+              'Vovô e vovó',
+              'Titio',
+              'Maninha'
+            ],
+            'correctIndex': 3,
+            'correctResponse': fraseEscolha,
+            'incorrectResponse':  fraseEscolha
+          },
+          {
+            'q': 'Quem vai segurar na hora das vacinas?',
+            'options': [
+              'Mamãe',
+              'Papai',
+              'Vovô e vovó',
+              'Titio',
+              'Todo mundo agarradinho'
+            ],
+            'correctIndex': 3,
+            'correctResponse': fraseUltEscolha,
+            'incorrectResponse': fraseUltEscolha
+          }
         ]
       });
     };
@@ -234,6 +231,13 @@
         $("#div_revelacao").css('display','block');
       });
      
+    }
+
+    _public.CheckedImageRevelacao = function () {
+      $("#switch").on('click', function () {
+        $(".quiz").css('background','linear-gradient(45deg,#87cefa,#87cefa)');
+        $("#titulo_revelacao").text('O AMOR É AZULZINHO!');
+      });
     }
     
 })();
